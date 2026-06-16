@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="teknofest_robotaksi">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+    <model name="yol_ana"><static>true</static><pose>0 0 0.01 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>40 6 0.02</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>40 6 0.02</size></box></geometry>
+        <material><ambient>0.15 0.15 0.15 1</ambient></material></visual>
+      </link>
+    </model>
+    <model name="serit_orta"><static>true</static><pose>0 0 0.02 0 0 0</pose>
+      <link name="link"><visual name="vis"><geometry><box><size>40 0.12 0.001</size></box></geometry>
+      <material><ambient>1 1 0 1</ambient></material></visual></link>
+    </model>
+    <model name="serit_sol"><static>true</static><pose>0 2.9 0.02 0 0 0</pose>
+      <link name="link"><visual name="vis"><geometry><box><size>40 0.1 0.001</size></box></geometry>
+      <material><ambient>1 1 1 1</ambient></material></visual></link>
+    </model>
+    <model name="serit_sag"><static>true</static><pose>0 -2.9 0.02 0 0 0</pose>
+      <link name="link"><visual name="vis"><geometry><box><size>40 0.1 0.001</size></box></geometry>
+      <material><ambient>1 1 1 1</ambient></material></visual></link>
+    </model>
+    <model name="trafik_isigi_1"><static>true</static><pose>10 3.5 0 0 0 0</pose>
+      <link name="direk"><pose>0 0 1.5 0 0 0</pose>
+        <visual name="vis"><geometry><cylinder><radius>0.05</radius><length>3.0</length></cylinder></geometry>
+        <material><ambient>0.3 0.3 0.3 1</ambient></material></visual>
+      </link>
+      <link name="kirmizi"><pose>0 0 3.55 0 0 0</pose>
+        <visual name="vis"><geometry><sphere><radius>0.1</radius></sphere></geometry>
+        <material><ambient>1 0 0 1</ambient></material></visual>
+      </link>
+      <link name="sari"><pose>0 0 3.3 0 0 0</pose>
+        <visual name="vis"><geometry><sphere><radius>0.1</radius></sphere></geometry>
+        <material><ambient>0.5 0.5 0 1</ambient></material></visual>
+      </link>
+      <link name="yesil"><pose>0 0 3.05 0 0 0</pose>
+        <visual name="vis"><geometry><sphere><radius>0.1</radius></sphere></geometry>
+        <material><ambient>0 0.5 0 1</ambient></material></visual>
+      </link>
+    </model>
+    <model name="trafik_isigi_2"><static>true</static><pose>25 3.5 0 0 0 0</pose>
+      <link name="direk"><pose>0 0 1.5 0 0 0</pose>
+        <visual name="vis"><geometry><cylinder><radius>0.05</radius><length>3.0</length></cylinder></geometry>
+        <material><ambient>0.3 0.3 0.3 1</ambient></material></visual>
+      </link>
+      <link name="kirmizi"><pose>0 0 3.55 0 0 0</pose>
+        <visual name="vis"><geometry><sphere><radius>0.1</radius></sphere></geometry>
+        <material><ambient>1 0 0 1</ambient></material></visual>
+      </link>
+      <link name="yesil"><pose>0 0 3.05 0 0 0</pose>
+        <visual name="vis"><geometry><sphere><radius>0.1</radius></sphere></geometry>
+        <material><ambient>0 0.5 0 1</ambient></material></visual>
+      </link>
+    </model>
+    <model name="dur_tabela"><static>true</static><pose>15 3.5 0 0 0 0</pose>
+      <link name="direk"><pose>0 0 1.0 0 0 0</pose>
+        <visual name="vis"><geometry><cylinder><radius>0.04</radius><length>2.0</length></cylinder></geometry>
+        <material><ambient>0.6 0.6 0.6 1</ambient></material></visual>
+      </link>
+      <link name="tabela"><pose>0 0 2.3 0 0 0</pose>
+        <visual name="vis"><geometry><box><size>0.6 0.6 0.05</size></box></geometry>
+        <material><ambient>1 0 0 1</ambient></material></visual>
+      </link>
+    </model>
+    <model name="koni_1"><static>true</static><pose>8 -0.8 0.3 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><cylinder><radius>0.2</radius><length>0.6</length></cylinder></geometry></collision>
+        <visual name="vis"><geometry><cylinder><radius>0.2</radius><length>0.6</length></cylinder></geometry>
+        <material><ambient>1 0.3 0 1</ambient></material></visual>
+      </link>
+    </model>
+    <model name="koni_2"><static>true</static><pose>18 1.0 0.3 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><cylinder><radius>0.2</radius><length>0.6</length></cylinder></geometry></collision>
+        <visual name="vis"><geometry><cylinder><radius>0.2</radius><length>0.6</length></cylinder></geometry>
+        <material><ambient>1 0.3 0 1</ambient></material></visual>
+      </link>
+    </model>
+    <model name="park_zemin"><static>true</static><pose>35 5 0.01 0 0 0</pose>
+      <link name="link"><visual name="vis"><geometry><box><size>8 5 0.02</size></box></geometry>
+      <material><ambient>0.2 0.2 0.3 1</ambient></material></visual></link>
+    </model>
+    <model name="park_c1"><static>true</static><pose>32 5 0.02 0 0 0</pose>
+      <link name="link"><visual name="vis"><geometry><box><size>0.1 5 0.001</size></box></geometry>
+      <material><ambient>1 1 1 1</ambient></material></visual></link>
+    </model>
+    <model name="park_c2"><static>true</static><pose>35 5 0.02 0 0 0</pose>
+      <link name="link"><visual name="vis"><geometry><box><size>0.1 5 0.001</size></box></geometry>
+      <material><ambient>1 1 1 1</ambient></material></visual></link>
+    </model>
+    <model name="park_c3"><static>true</static><pose>38 5 0.02 0 0 0</pose>
+      <link name="link"><visual name="vis"><geometry><box><size>0.1 5 0.001</size></box></geometry>
+      <material><ambient>1 1 1 1</ambient></material></visual></link>
+    </model>
+    <physics type="ode">
+      <real_time_update_rate>1000</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+    </physics>
+  </world>
+</sdf>
