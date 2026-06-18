@@ -1,0 +1,25 @@
+# gps_loss_zone parametreleri
+#
+# Bu değerler GERÇEK repo (S-M-LASYON/robotaxi_sim) incelenerek ayarlandı:
+#   - model_name "robotaxi" -> URDF <robot name="robotaxi"> ve
+#     spawn_entity.py -entity robotaxi ile birebir aynı.
+#   - raw_gps_topic "/gps" -> URDF'teki gazebo_ros_gps_sensor plugin'i
+#     <ros><topic>gps</topic></ros> ile zaten BU topic'te NavSatFix
+#     yayınlıyor. URDF'i DEĞİŞTİRMENİZE gerek yok.
+#   - zone_x_min/max, zone_y_min/max -> worlds/teknofest_pist.world
+#     içinde ZATEN VAR OLAN "TÜNEL" bloğunun (tunel_giris x=49,
+#     tunel_cikis x=61, tunel_sol/sag y=±4.3) dış sınırlarıyla birebir
+#     aynı. Ayrı bir tünel modeli eklemenize gerek yok.
+gps_loss_simulator:
+  ros__parameters:
+    model_name: "robotaxi"
+    model_states_topic: "/gazebo/model_states"   # bkz. README: plugin eklendikten sonra `ros2 topic list` ile DOĞRULAYIN
+    raw_gps_topic: "/gazebo_ros_gps/out"
+    out_gps_topic: "/gps/fix"
+    mode: "drop"                # "drop" (tam kesinti) veya "degrade" (yüksek kovaryans)
+    degraded_covariance: 9999.0
+    zone_x_min: 49.0
+    zone_x_max: 61.0
+    zone_y_min: -4.3
+    zone_y_max: 4.3
+    force_loss: false           # test için: ros2 param set /gps_loss_simulator force_loss true
