@@ -238,10 +238,11 @@
     </plugin>
   </gazebo>
 
-  <!-- LiDAR plugin -->
+  <!-- LiDAR plugin - Velodyne VLP-16 simulasyonu (16 dikey katman, +-15 derece) -->
   <gazebo reference="lidar_link">
     <sensor type="ray" name="lidar">
       <pose>0 0 0 0 0 0</pose>
+      <always_on>true</always_on>
       <visualize>true</visualize>
       <update_rate>10</update_rate>
       <ray>
@@ -252,15 +253,29 @@
             <min_angle>-3.14159</min_angle>
             <max_angle>3.14159</max_angle>
           </horizontal>
+          <vertical>
+            <!-- VLP-16: 16 katman, dikey FOV +-15 derece (0.2618 rad) -->
+            <samples>16</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.2618</min_angle>
+            <max_angle>0.2618</max_angle>
+          </vertical>
         </scan>
         <range>
           <min>0.3</min>
-          <max>30.0</max>
+          <max>100.0</max>
+          <resolution>0.01</resolution>
         </range>
       </ray>
       <plugin name="gazebo_ros_lidar" filename="libgazebo_ros_ray_sensor.so">
-        <ros><topic>scan</topic></ros>
-        <output_type>sensor_msgs/LaserScan</output_type>
+        <ros>
+          <!-- NOT: <topic> kisayolu GPS/IMU'da beklenmedik calisti (bkz. Gorev 1
+               debug sureci), bu yuzden burada DOGRUDAN remapping syntax'i
+               kullaniyoruz - kesin /velodyne_points'e cikmasini garantiler. -->
+          <remapping>~/out:=velodyne_points</remapping>
+        </ros>
+        <output_type>sensor_msgs/PointCloud2</output_type>
+        <frame_name>lidar_link</frame_name>
       </plugin>
     </sensor>
   </gazebo>

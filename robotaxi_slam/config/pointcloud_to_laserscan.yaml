@@ -1,0 +1,27 @@
+# VLP-16'dan gelen 3D point cloud'u (/velodyne_points) tek bir yatay
+# dilime indirip 2D LaserScan (/scan) uretir - slam_toolbox 2D SLAM
+# yaptigi icin bu donusum sart (dogrudan 3D point cloud ile SLAM yapmaz).
+#
+# min_height/max_height: lidar_link cercevesine gore (sensor merkezi z=0).
+# ONEMLI - GERCEK TEST SONUCU: min_height=-0.2 ile LiDAR kendi aracin
+# tavanini goruyordu (lidar z=0.35, govde tavani z=0.25, aradaki 0.10m
+# bosluk -15 derecelik en alt katman tarafindan z=-0.10 civarinda
+# "self-hit" olarak algilaniyordu - /scan'de sabit ~0.37m sahte engel
+# olarak cikiyordu, gercek cevreyi bastiriyordu). min_height -0.05'e
+# cekilerek bu self-hit'ler elendi, gercek (sensore yakin yukseklikteki)
+# engeller hala gorunur kaliyor.
+/**:
+  ros__parameters:
+    target_frame: "lidar_link"
+    transform_tolerance: 0.02
+    min_height: -0.05
+    max_height: 0.2
+    angle_min: -3.14159265
+    angle_max: 3.14159265
+    angle_increment: 0.0087   # ~0.5 derece
+    scan_time: 0.1
+    range_min: 0.3
+    range_max: 100.0
+    use_inf: true
+    inf_epsilon: 1.0
+    # concurrency_level: 1
