@@ -309,6 +309,7 @@
   <!-- GPS plugin -->
   <gazebo reference="gps_link">
     <sensor name="gps_sensor" type="gps">
+      <always_on>true</always_on>
       <update_rate>10</update_rate>
       <plugin name="gazebo_ros_gps" filename="libgazebo_ros_gps_sensor.so">
         <ros><topic>gps</topic></ros>
