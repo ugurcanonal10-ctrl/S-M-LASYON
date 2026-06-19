@@ -167,6 +167,7 @@ class FSMNode(Node):
         self._ctx['parking_complete'] = False
         self._ctx['intersection_cleared'] = False
         self._ctx['sign_detected'] = False
+        self._ctx['mission_event'] = ''
 
         self._current_state.on_enter()
 

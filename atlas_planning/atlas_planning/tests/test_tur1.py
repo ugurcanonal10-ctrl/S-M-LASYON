@@ -58,23 +58,29 @@ class Tur1TestNode(Node):
         return False
 
     def _temizle(self):
-        """Tum sinyalleri sifirla."""
-        m = String(); m.data = 'none'
-        self._pub_mission.publish(m)
-        self._pub_obstacle.publish(m)
-        m2 = Float32(); m2.data = 999.0
-        self._pub_dist.publish(m2)
-        m3 = String(); m3.data = ''
-        self._pub_dwa.publish(m3)
-        self._spin(0.3)
+        """Tum sinyalleri sifirla. Birden fazla kez gonder ki eski
+        mesajlar kuyrukta kalmasin."""
+        for _ in range(5):
+            m = String(); m.data = 'none'
+            self._pub_mission.publish(m)
+            self._pub_obstacle.publish(m)
+            m2 = Float32(); m2.data = 999.0
+            self._pub_dist.publish(m2)
+            m3 = String(); m3.data = ''
+            self._pub_dwa.publish(m3)
+            self._spin(0.2)
+        self._spin(0.5)
 
     def _adim(self, no: int, aciklama: str):
         print(f'{BLUE}[Adim {no:2}]{RESET} {aciklama}')
 
-    def _kontrol(self, beklenen: str, aciklama: str) -> bool:
-        if self._current_state == beklenen:
+    def _kontrol(self, beklenen: str, aciklama: str, ulasildi: bool = None) -> bool:
+        # ulasildi: _bekle_state donus degeri varsa onu kullan,
+        # yoksa anlik state'e bak (geriye uyumluluk icin)
+        basarili = ulasildi if ulasildi is not None else (self._current_state == beklenen)
+        if basarili:
             print(f'         {GREEN}✓ GECTI{RESET} — '
-                  f'{self._current_state} ({aciklama})')
+                  f'{beklenen} ({aciklama})')
             return True
         else:
             print(f'         {RED}✗ KALDI{RESET} — '
@@ -87,15 +93,15 @@ class Tur1TestNode(Node):
         # ADIM 1 — Baslangic
         self._adim(1, 'UMS-2 (Go) — arac harekete geciyor')
         self._temizle()
-        self._bekle_state('LANE_FOLLOW')
-        self._kontrol('LANE_FOLLOW', 'Normal suruş')
+        ulasildi = self._bekle_state('LANE_FOLLOW')
+        self._kontrol('LANE_FOLLOW', 'Normal suruş', ulasildi)
 
         # ADIM 2 — Statik engel
         self._adim(2, 'LIDAR statik engel tespit etti')
         m = String(); m.data = 'static'
         self._pub_obstacle.publish(m)
-        self._bekle_state('STATIC_OBSTACLE')
-        self._kontrol('STATIC_OBSTACLE', 'DWA baslatildi')
+        ulasildi = self._bekle_state('STATIC_OBSTACLE')
+        self._kontrol('STATIC_OBSTACLE', 'DWA baslatildi', ulasildi)
 
         # ADIM 3 — Engel gecildi
         self._adim(3, 'DWA basarili — serite don')
@@ -103,8 +109,8 @@ class Tur1TestNode(Node):
         self._pub_obstacle.publish(m)
         m2 = String(); m2.data = 'cleared'
         self._pub_dwa.publish(m2)
-        self._bekle_state('LANE_FOLLOW')
-        self._kontrol('LANE_FOLLOW', 'Engel gecildi')
+        ulasildi = self._bekle_state('LANE_FOLLOW')
+        self._kontrol('LANE_FOLLOW', 'Engel gecildi', ulasildi)
 
         # ADIM 4-9 — 3x Yolcu Alma
         for i in range(1, 4):
@@ -120,20 +126,26 @@ class Tur1TestNode(Node):
             m2 = Float32(); m2.data = 0.5
             self._pub_dist.publish(m2)
 
-            self._bekle_state('PASSENGER_PICKUP', timeout=3.0)
+            ulasildi = self._bekle_state('PASSENGER_PICKUP', timeout=3.0)
             self._kontrol('PASSENGER_PICKUP',
-                          f'{i}. yolcu bekleniyor (17 sn)')
+                          f'{i}. yolcu bekleniyor (17 sn)', ulasildi)
 
             print(f'         {YELLOW}⏱  17 saniye bekleniyor...{RESET}',
                   end='', flush=True)
 
-            # 17 saniye beklerken sinyalleri koru
-            end_time = time.time() + 17.5
+            # 17 saniye beklerken sinyalleri koru.
+            # Son 2 saniyede sinyal gondermeyi kes ki FSM kendi
+            # timer'iyla LANE_FOLLOW'a gectiginde eski 'pickup'
+            # sinyali kuyrukta kalip tekrar PASSENGER_PICKUP'a
+            # dondurmesin.
+            end_time = time.time() + 17.0
+            stop_signal_time = time.time() + 15.0
             while time.time() < end_time:
-                m = String(); m.data = 'pickup'
-                self._pub_mission.publish(m)
-                m2 = Float32(); m2.data = 0.5
-                self._pub_dist.publish(m2)
+                if time.time() < stop_signal_time:
+                    m = String(); m.data = 'pickup'
+                    self._pub_mission.publish(m)
+                    m2 = Float32(); m2.data = 0.5
+                    self._pub_dist.publish(m2)
                 self._spin(0.5)
             print(f' {GREEN}Tamam!{RESET}')
 
@@ -141,8 +153,8 @@ class Tur1TestNode(Node):
             self._adim(adim_no + 1,
                        f'{i}. yolcu alindi — serite don')
             self._temizle()
-            self._bekle_state('LANE_FOLLOW', timeout=5.0)
-            self._kontrol('LANE_FOLLOW', 'Sure doldu')
+            ulasildi = self._bekle_state('LANE_FOLLOW', timeout=5.0)
+            self._kontrol('LANE_FOLLOW', 'Sure doldu', ulasildi)
 
         # ADIM 10 — Park
         self._adim(10, 'Park bolgesine yaklasiliyor (<=5 m)')
@@ -150,22 +162,22 @@ class Tur1TestNode(Node):
         self._pub_mission.publish(m)
         m2 = Float32(); m2.data = 4.0
         self._pub_dist.publish(m2)
-        self._bekle_state('PARKING_SEARCH', timeout=5.0)
-        self._kontrol('PARKING_SEARCH', 'Park yeri aranıyor')
+        ulasildi = self._bekle_state('PARKING_SEARCH', timeout=5.0)
+        self._kontrol('PARKING_SEARCH', 'Park yeri aranıyor', ulasildi)
 
         # ADIM 11
         self._adim(11, 'Uygun park yeri bulundu')
         m = Bool(); m.data = True
         self._pub_park_spot.publish(m)
-        self._bekle_state('PARKING_MANEUVER', timeout=5.0)
-        self._kontrol('PARKING_MANEUVER', 'Manuvraya basla')
+        ulasildi = self._bekle_state('PARKING_MANEUVER', timeout=5.0)
+        self._kontrol('PARKING_MANEUVER', 'Manuvraya basla', ulasildi)
 
         # ADIM 12
         self._adim(12, 'Park tamamlandi')
         m = Bool(); m.data = True
         self._pub_park_done.publish(m)
-        self._bekle_state('MISSION_COMPLETE', timeout=5.0)
-        self._kontrol('MISSION_COMPLETE', 'Gorev tamamlandi!')
+        ulasildi = self._bekle_state('MISSION_COMPLETE', timeout=5.0)
+        self._kontrol('MISSION_COMPLETE', 'Gorev tamamlandi!', ulasildi)
 
         self._sonuc()
 
