@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="city">
+
+    <!-- Güneş ışığı -->
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 100 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+
+    <!-- Zemin -->
+    <model name="ground">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><plane><normal>0 0 1</normal><size>200 200</size></plane></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>200 200</size></plane></geometry>
+          <material><ambient>0.3 0.3 0.3 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Yol (yatay) -->
+    <model name="road_h">
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <pose>0 0 0.01 0 0 0</pose>
+          <geometry><box><size>100 8 0.02</size></box></geometry>
+          <material><ambient>0.15 0.15 0.15 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Yol (dikey) -->
+    <model name="road_v">
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <pose>0 0 0.01 0 0 0</pose>
+          <geometry><box><size>8 100 0.02</size></box></geometry>
+          <material><ambient>0.15 0.15 0.15 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Bina 1 -->
+    <model name="building_1">
+      <static>true</static>
+      <pose>20 20 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>10 10 20</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>10 10 20</size></box></geometry>
+          <material><ambient>0.6 0.6 0.8 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Bina 2 -->
+    <model name="building_2">
+      <static>true</static>
+      <pose>-20 20 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>10 10 15</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>10 10 15</size></box></geometry>
+          <material><ambient>0.8 0.6 0.6 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Bina 3 -->
+    <model name="building_3">
+      <static>true</static>
+      <pose>20 -20 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>10 10 25</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>10 10 25</size></box></geometry>
+          <material><ambient>0.6 0.8 0.6 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Bina 4 -->
+    <model name="building_4">
+      <static>true</static>
+      <pose>-20 -20 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>10 10 18</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>10 10 18</size></box></geometry>
+          <material><ambient>0.7 0.7 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <physics type="ode">
+      <real_time_update_rate>1000</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+    </physics>
+
+  </world>
+</sdf>

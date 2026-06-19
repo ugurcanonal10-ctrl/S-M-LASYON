@@ -1,0 +1,4 @@
+[console_scripts]
+estop = robotaxi_sim.estop:main
+imu_from_odom = robotaxi_sim.imu_from_odom:main
+
