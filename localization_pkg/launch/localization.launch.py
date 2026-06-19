@@ -32,11 +32,22 @@ def generate_launch_description():
                 'magnetic_declination_radians': 0.0,
                 'yaw_offset': 0.0,
                 'zero_altitude': True,
+                # bkz. config/ekf.yaml'daki ayni notu - /clock olmadan
+                # navsat_transform_node de TF_OLD_DATA aliyordu.
+                'use_sim_time': True,
             }],
             remappings=[
                 ('imu/data', '/gazebo_ros_imu/out'),
                 ('gps/fix', '/gazebo_ros_gps/out'),
-                ('odometry/filtered', '/localization/pose')
+                # ESKI: ('odometry/filtered', '/localization/pose') -> KALDIRILDI.
+                # EKF varsayilan olarak /odometry/filtered'a yaziyor (yukaridaki
+                # ekf_filter_node Node'unda remap YOK), ama bu satir
+                # navsat_transform_node'u '/localization/pose'u dinlemeye
+                # zorluyordu - boyle bir topic hicbir zaman var olmadi, yani
+                # navsat_transform GPS donguyu kapatmak icin gereken filtrelenmis
+                # odometriyi ASLA goremiyordu. Kaldirilinca navsat_transform_node
+                # varsayilan '/odometry/filtered'i dinleyip EKF'nin gercek
+                # ciktisini alacak. (Ahmet, Gorev 3 debug sureci)
             ]
         ),
     ])

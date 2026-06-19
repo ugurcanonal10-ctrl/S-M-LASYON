@@ -1,6 +1,12 @@
 ekf_filter_node:
   ros__parameters:
 
+    # /clock topic'i Gazebo'dan geliyor (gazebo_ros_init plugin'i,
+    # bkz. world dosyasi patch'i) - bu olmadan EKF tum olcumleri
+    # "gecmisten gelen veri" sanip reddediyordu (TF_OLD_DATA hatasi).
+    # Ahmet (Gorev 3 debug sureci) tarafindan eklendi.
+    use_sim_time: true
+
     frequency: 30.0
     sensor_timeout: 0.1
     two_d_mode: true
