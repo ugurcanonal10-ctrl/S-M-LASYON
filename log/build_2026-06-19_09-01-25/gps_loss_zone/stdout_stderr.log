@@ -1,0 +1,39 @@
+running egg_info
+creating ../build/gps_loss_zone/gps_loss_zone.egg-info
+writing ../build/gps_loss_zone/gps_loss_zone.egg-info/PKG-INFO
+writing dependency_links to ../build/gps_loss_zone/gps_loss_zone.egg-info/dependency_links.txt
+writing entry points to ../build/gps_loss_zone/gps_loss_zone.egg-info/entry_points.txt
+writing requirements to ../build/gps_loss_zone/gps_loss_zone.egg-info/requires.txt
+writing top-level names to ../build/gps_loss_zone/gps_loss_zone.egg-info/top_level.txt
+writing manifest file '../build/gps_loss_zone/gps_loss_zone.egg-info/SOURCES.txt'
+reading manifest file '../build/gps_loss_zone/gps_loss_zone.egg-info/SOURCES.txt'
+writing manifest file '../build/gps_loss_zone/gps_loss_zone.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build
+creating /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib
+creating /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib/gps_loss_zone
+copying gps_loss_zone/gps_loss_simulator.py -> /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib/gps_loss_zone
+copying gps_loss_zone/__init__.py -> /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib/gps_loss_zone
+running install
+running install_lib
+creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone
+copying /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib/gps_loss_zone/gps_loss_simulator.py -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone
+copying /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib/gps_loss_zone/__init__.py -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone
+byte-compiling /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone/gps_loss_simulator.py to gps_loss_simulator.cpython-38.pyc
+byte-compiling /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/ament_index
+creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/ament_index/resource_index
+creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/ament_index/resource_index/packages
+copying resource/gps_loss_zone -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/ament_index/resource_index/packages
+copying package.xml -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/gps_loss_zone
+creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/gps_loss_zone/launch
+copying launch/gps_loss_zone.launch.py -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/gps_loss_zone/launch
+creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/gps_loss_zone/config
+copying config/gps_loss_zone.yaml -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/gps_loss_zone/config
+running install_egg_info
+Copying ../build/gps_loss_zone/gps_loss_zone.egg-info to /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone-0.1.0-py3.8.egg-info
+running install_scripts
+Installing gps_loss_simulator script to /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/gps_loss_zone
+writing list of installed files to '/root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/install.log'

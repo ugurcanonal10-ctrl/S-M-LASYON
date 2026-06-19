@@ -1,0 +1,104 @@
+[0.000000] (-) TimerEvent: {}
+[0.000102] (gps_loss_zone) JobQueued: {'identifier': 'gps_loss_zone', 'dependencies': OrderedDict()}
+[0.000128] (robotaxi_sim) JobQueued: {'identifier': 'robotaxi_sim', 'dependencies': OrderedDict()}
+[0.000147] (gps_loss_zone) JobStarted: {'identifier': 'gps_loss_zone'}
+[0.008272] (robotaxi_sim) JobStarted: {'identifier': 'robotaxi_sim'}
+[0.099651] (-) TimerEvent: {}
+[0.200073] (-) TimerEvent: {}
+[0.300448] (-) TimerEvent: {}
+[0.372097] (robotaxi_sim) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../build/robotaxi_sim', 'build', '--build-base', '/root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build', 'install', '--record', '/root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/install.log', '--single-version-externally-managed'], 'cwd': '/root/robotaksi_ws/src/S-M-LASYON/robotaxi_sim', 'env': {'HOSTNAME': 'ugur-EXCALIBUR-G870', 'SHLVL': '1', 'HOME': '/root', 'OLDPWD': '/', 'ROS_DISTRO': 'foxy', '_': '/usr/bin/colcon', 'TERM': 'xterm', 'QT_X11_NO_MITSHM': '1', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'PWD': '/root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim', 'LC_ALL': 'C.UTF-8', 'COLCON': '1', 'PYTHONPATH': '/root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/prefix_override:/root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages:'}, 'shell': False}
+[0.376263] (gps_loss_zone) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../build/gps_loss_zone', 'build', '--build-base', '/root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build', 'install', '--record', '/root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/install.log', '--single-version-externally-managed'], 'cwd': '/root/robotaksi_ws/src/S-M-LASYON/gps_loss_zone', 'env': {'HOSTNAME': 'ugur-EXCALIBUR-G870', 'SHLVL': '1', 'HOME': '/root', 'OLDPWD': '/', 'ROS_DISTRO': 'foxy', '_': '/usr/bin/colcon', 'TERM': 'xterm', 'QT_X11_NO_MITSHM': '1', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'PWD': '/root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone', 'LC_ALL': 'C.UTF-8', 'COLCON': '1', 'PYTHONPATH': '/root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/prefix_override:/root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages:'}, 'shell': False}
+[0.400554] (-) TimerEvent: {}
+[0.450653] (robotaxi_sim) StdoutLine: {'line': b'running egg_info\n'}
+[0.450785] (robotaxi_sim) StdoutLine: {'line': b'creating ../build/robotaxi_sim/robotaxi_sim.egg-info\n'}
+[0.450821] (robotaxi_sim) StdoutLine: {'line': b'writing ../build/robotaxi_sim/robotaxi_sim.egg-info/PKG-INFO\n'}
+[0.450876] (robotaxi_sim) StdoutLine: {'line': b'writing dependency_links to ../build/robotaxi_sim/robotaxi_sim.egg-info/dependency_links.txt\n'}
+[0.451008] (robotaxi_sim) StdoutLine: {'line': b'writing entry points to ../build/robotaxi_sim/robotaxi_sim.egg-info/entry_points.txt\n'}
+[0.451067] (robotaxi_sim) StdoutLine: {'line': b'writing requirements to ../build/robotaxi_sim/robotaxi_sim.egg-info/requires.txt\n'}
+[0.451096] (robotaxi_sim) StdoutLine: {'line': b'writing top-level names to ../build/robotaxi_sim/robotaxi_sim.egg-info/top_level.txt\n'}
+[0.452011] (gps_loss_zone) StdoutLine: {'line': b'running egg_info\n'}
+[0.452098] (gps_loss_zone) StdoutLine: {'line': b'creating ../build/gps_loss_zone/gps_loss_zone.egg-info\n'}
+[0.452159] (gps_loss_zone) StdoutLine: {'line': b'writing ../build/gps_loss_zone/gps_loss_zone.egg-info/PKG-INFO\n'}
+[0.452267] (gps_loss_zone) StdoutLine: {'line': b'writing dependency_links to ../build/gps_loss_zone/gps_loss_zone.egg-info/dependency_links.txt\n'}
+[0.452319] (gps_loss_zone) StdoutLine: {'line': b'writing entry points to ../build/gps_loss_zone/gps_loss_zone.egg-info/entry_points.txt\n'}
+[0.452359] (gps_loss_zone) StdoutLine: {'line': b'writing requirements to ../build/gps_loss_zone/gps_loss_zone.egg-info/requires.txt\n'}
+[0.452395] (gps_loss_zone) StdoutLine: {'line': b'writing top-level names to ../build/gps_loss_zone/gps_loss_zone.egg-info/top_level.txt\n'}
+[0.452634] (robotaxi_sim) StdoutLine: {'line': b"writing manifest file '../build/robotaxi_sim/robotaxi_sim.egg-info/SOURCES.txt'\n"}
+[0.453100] (gps_loss_zone) StdoutLine: {'line': b"writing manifest file '../build/gps_loss_zone/gps_loss_zone.egg-info/SOURCES.txt'\n"}
+[0.468558] (robotaxi_sim) StdoutLine: {'line': b"reading manifest file '../build/robotaxi_sim/robotaxi_sim.egg-info/SOURCES.txt'\n"}
+[0.469059] (robotaxi_sim) StdoutLine: {'line': b"writing manifest file '../build/robotaxi_sim/robotaxi_sim.egg-info/SOURCES.txt'\n"}
+[0.469144] (robotaxi_sim) StdoutLine: {'line': b'running build\n'}
+[0.469175] (robotaxi_sim) StdoutLine: {'line': b'running build_py\n'}
+[0.469202] (gps_loss_zone) StdoutLine: {'line': b"reading manifest file '../build/gps_loss_zone/gps_loss_zone.egg-info/SOURCES.txt'\n"}
+[0.469247] (robotaxi_sim) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build\n'}
+[0.469271] (robotaxi_sim) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib\n'}
+[0.469299] (robotaxi_sim) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim\n'}
+[0.469322] (robotaxi_sim) StdoutLine: {'line': b'copying robotaxi_sim/estop.py -> /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim\n'}
+[0.469433] (gps_loss_zone) StdoutLine: {'line': b"writing manifest file '../build/gps_loss_zone/gps_loss_zone.egg-info/SOURCES.txt'\n"}
+[0.469597] (gps_loss_zone) StdoutLine: {'line': b'running build\n'}
+[0.469629] (gps_loss_zone) StdoutLine: {'line': b'running build_py\n'}
+[0.469656] (robotaxi_sim) StdoutLine: {'line': b'copying robotaxi_sim/__init__.py -> /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim\n'}
+[0.469693] (robotaxi_sim) StdoutLine: {'line': b'copying robotaxi_sim/imu_from_odom.py -> /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim\n'}
+[0.469719] (gps_loss_zone) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build\n'}
+[0.469743] (gps_loss_zone) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib\n'}
+[0.469767] (gps_loss_zone) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib/gps_loss_zone\n'}
+[0.469791] (gps_loss_zone) StdoutLine: {'line': b'copying gps_loss_zone/gps_loss_simulator.py -> /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib/gps_loss_zone\n'}
+[0.469815] (gps_loss_zone) StdoutLine: {'line': b'copying gps_loss_zone/__init__.py -> /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib/gps_loss_zone\n'}
+[0.469851] (gps_loss_zone) StdoutLine: {'line': b'running install\n'}
+[0.470070] (robotaxi_sim) StdoutLine: {'line': b'running install\n'}
+[0.470104] (gps_loss_zone) StdoutLine: {'line': b'running install_lib\n'}
+[0.470487] (robotaxi_sim) StdoutLine: {'line': b'running install_lib\n'}
+[0.470541] (gps_loss_zone) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone\n'}
+[0.470584] (gps_loss_zone) StdoutLine: {'line': b'copying /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib/gps_loss_zone/gps_loss_simulator.py -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone\n'}
+[0.470643] (gps_loss_zone) StdoutLine: {'line': b'copying /root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/build/lib/gps_loss_zone/__init__.py -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone\n'}
+[0.470867] (robotaxi_sim) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim\n'}
+[0.470908] (gps_loss_zone) StdoutLine: {'line': b'byte-compiling /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone/gps_loss_simulator.py to gps_loss_simulator.cpython-38.pyc\n'}
+[0.470952] (robotaxi_sim) StdoutLine: {'line': b'copying /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim/estop.py -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim\n'}
+[0.470986] (robotaxi_sim) StdoutLine: {'line': b'copying /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim/__init__.py -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim\n'}
+[0.471027] (robotaxi_sim) StdoutLine: {'line': b'copying /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim/imu_from_odom.py -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim\n'}
+[0.471246] (robotaxi_sim) StdoutLine: {'line': b'byte-compiling /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim/estop.py to estop.cpython-38.pyc\n'}
+[0.472019] (gps_loss_zone) StdoutLine: {'line': b'byte-compiling /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone/__init__.py to __init__.cpython-38.pyc\n'}
+[0.472052] (gps_loss_zone) StdoutLine: {'line': b'running install_data\n'}
+[0.472087] (robotaxi_sim) StdoutLine: {'line': b'byte-compiling /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim/__init__.py to __init__.cpython-38.pyc\n'}
+[0.472162] (robotaxi_sim) StdoutLine: {'line': b'byte-compiling /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim/imu_from_odom.py to imu_from_odom.cpython-38.pyc\n'}
+[0.472198] (gps_loss_zone) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/ament_index\n'}
+[0.472233] (gps_loss_zone) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/ament_index/resource_index\n'}
+[0.472268] (gps_loss_zone) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/ament_index/resource_index/packages\n'}
+[0.472304] (gps_loss_zone) StdoutLine: {'line': b'copying resource/gps_loss_zone -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/ament_index/resource_index/packages\n'}
+[0.472339] (gps_loss_zone) StdoutLine: {'line': b'copying package.xml -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/gps_loss_zone\n'}
+[0.472376] (gps_loss_zone) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/gps_loss_zone/launch\n'}
+[0.472414] (gps_loss_zone) StdoutLine: {'line': b'copying launch/gps_loss_zone.launch.py -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/gps_loss_zone/launch\n'}
+[0.472456] (gps_loss_zone) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/gps_loss_zone/config\n'}
+[0.472488] (gps_loss_zone) StdoutLine: {'line': b'copying config/gps_loss_zone.yaml -> /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/share/gps_loss_zone/config\n'}
+[0.472513] (gps_loss_zone) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.472555] (robotaxi_sim) StdoutLine: {'line': b'running install_data\n'}
+[0.472652] (robotaxi_sim) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/ament_index\n'}
+[0.472695] (robotaxi_sim) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/ament_index/resource_index\n'}
+[0.472736] (robotaxi_sim) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/ament_index/resource_index/packages\n'}
+[0.472778] (robotaxi_sim) StdoutLine: {'line': b'copying resource/robotaxi_sim -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/ament_index/resource_index/packages\n'}
+[0.472827] (robotaxi_sim) StdoutLine: {'line': b'copying package.xml -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim\n'}
+[0.472854] (robotaxi_sim) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/launch\n'}
+[0.472896] (robotaxi_sim) StdoutLine: {'line': b'copying launch/sim_teknofest.launch.py -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/launch\n'}
+[0.472937] (robotaxi_sim) StdoutLine: {'line': b'copying launch/sim.launch.py -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/launch\n'}
+[0.473045] (robotaxi_sim) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/worlds\n'}
+[0.473087] (robotaxi_sim) StdoutLine: {'line': b'copying worlds/teknofest_pist.world -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/worlds\n'}
+[0.473128] (robotaxi_sim) StdoutLine: {'line': b'copying worlds/city.world -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/worlds\n'}
+[0.473288] (robotaxi_sim) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/models\n'}
+[0.473349] (gps_loss_zone) StdoutLine: {'line': b'Copying ../build/gps_loss_zone/gps_loss_zone.egg-info to /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/python3.8/site-packages/gps_loss_zone-0.1.0-py3.8.egg-info\n'}
+[0.473377] (robotaxi_sim) StdoutLine: {'line': b'creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/models/robotaxi\n'}
+[0.473428] (robotaxi_sim) StdoutLine: {'line': b'copying models/robotaxi/robotaxi.urdf -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/models/robotaxi\n'}
+[0.473455] (robotaxi_sim) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.473725] (gps_loss_zone) StdoutLine: {'line': b'running install_scripts\n'}
+[0.474242] (robotaxi_sim) StdoutLine: {'line': b'Copying ../build/robotaxi_sim/robotaxi_sim.egg-info to /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim-0.0.1-py3.8.egg-info\n'}
+[0.474547] (robotaxi_sim) StdoutLine: {'line': b'running install_scripts\n'}
+[0.482353] (gps_loss_zone) StdoutLine: {'line': b'Installing gps_loss_simulator script to /root/robotaksi_ws/src/S-M-LASYON/install/gps_loss_zone/lib/gps_loss_zone\n'}
+[0.482496] (gps_loss_zone) StdoutLine: {'line': b"writing list of installed files to '/root/robotaksi_ws/src/S-M-LASYON/build/gps_loss_zone/install.log'\n"}
+[0.483155] (robotaxi_sim) StdoutLine: {'line': b'Installing estop script to /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/robotaxi_sim\n'}
+[0.483200] (robotaxi_sim) StdoutLine: {'line': b'Installing imu_from_odom script to /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/robotaxi_sim\n'}
+[0.483293] (robotaxi_sim) StdoutLine: {'line': b"writing list of installed files to '/root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/install.log'\n"}
+[0.494001] (gps_loss_zone) CommandEnded: {'returncode': 0}
+[0.500630] (-) TimerEvent: {}
+[0.504506] (gps_loss_zone) JobEnded: {'identifier': 'gps_loss_zone', 'rc': 0}
+[0.506838] (robotaxi_sim) CommandEnded: {'returncode': 0}
+[0.513558] (robotaxi_sim) JobEnded: {'identifier': 'robotaxi_sim', 'rc': 0}
+[0.513954] (-) EventReactorShutdown: {}

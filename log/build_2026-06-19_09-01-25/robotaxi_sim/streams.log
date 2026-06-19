@@ -1,0 +1,50 @@
+[0.365s] Invoking command in '/root/robotaksi_ws/src/S-M-LASYON/robotaxi_sim': PYTHONPATH=/root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/prefix_override:/root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages: /usr/bin/python3 setup.py egg_info --egg-base ../build/robotaxi_sim build --build-base /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build install --record /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/install.log --single-version-externally-managed
+[0.442s] running egg_info
+[0.442s] creating ../build/robotaxi_sim/robotaxi_sim.egg-info
+[0.442s] writing ../build/robotaxi_sim/robotaxi_sim.egg-info/PKG-INFO
+[0.442s] writing dependency_links to ../build/robotaxi_sim/robotaxi_sim.egg-info/dependency_links.txt
+[0.442s] writing entry points to ../build/robotaxi_sim/robotaxi_sim.egg-info/entry_points.txt
+[0.442s] writing requirements to ../build/robotaxi_sim/robotaxi_sim.egg-info/requires.txt
+[0.442s] writing top-level names to ../build/robotaxi_sim/robotaxi_sim.egg-info/top_level.txt
+[0.443s] writing manifest file '../build/robotaxi_sim/robotaxi_sim.egg-info/SOURCES.txt'
+[0.459s] reading manifest file '../build/robotaxi_sim/robotaxi_sim.egg-info/SOURCES.txt'
+[0.460s] writing manifest file '../build/robotaxi_sim/robotaxi_sim.egg-info/SOURCES.txt'
+[0.460s] running build
+[0.460s] running build_py
+[0.460s] creating /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build
+[0.460s] creating /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib
+[0.460s] creating /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim
+[0.460s] copying robotaxi_sim/estop.py -> /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim
+[0.460s] copying robotaxi_sim/__init__.py -> /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim
+[0.461s] copying robotaxi_sim/imu_from_odom.py -> /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim
+[0.461s] running install
+[0.461s] running install_lib
+[0.462s] creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim
+[0.462s] copying /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim/estop.py -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim
+[0.462s] copying /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim/__init__.py -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim
+[0.462s] copying /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build/lib/robotaxi_sim/imu_from_odom.py -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim
+[0.462s] byte-compiling /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim/estop.py to estop.cpython-38.pyc
+[0.463s] byte-compiling /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim/__init__.py to __init__.cpython-38.pyc
+[0.463s] byte-compiling /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim/imu_from_odom.py to imu_from_odom.cpython-38.pyc
+[0.463s] running install_data
+[0.463s] creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/ament_index
+[0.464s] creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/ament_index/resource_index
+[0.464s] creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/ament_index/resource_index/packages
+[0.464s] copying resource/robotaxi_sim -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/ament_index/resource_index/packages
+[0.464s] copying package.xml -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim
+[0.464s] creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/launch
+[0.464s] copying launch/sim_teknofest.launch.py -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/launch
+[0.464s] copying launch/sim.launch.py -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/launch
+[0.464s] creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/worlds
+[0.464s] copying worlds/teknofest_pist.world -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/worlds
+[0.464s] copying worlds/city.world -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/worlds
+[0.464s] creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/models
+[0.464s] creating /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/models/robotaxi
+[0.464s] copying models/robotaxi/robotaxi.urdf -> /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/share/robotaxi_sim/models/robotaxi
+[0.464s] running install_egg_info
+[0.465s] Copying ../build/robotaxi_sim/robotaxi_sim.egg-info to /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages/robotaxi_sim-0.0.1-py3.8.egg-info
+[0.465s] running install_scripts
+[0.474s] Installing estop script to /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/robotaxi_sim
+[0.474s] Installing imu_from_odom script to /root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/robotaxi_sim
+[0.474s] writing list of installed files to '/root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/install.log'
+[0.498s] Invoked command in '/root/robotaksi_ws/src/S-M-LASYON/robotaxi_sim' returned '0': PYTHONPATH=/root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/prefix_override:/root/robotaksi_ws/src/S-M-LASYON/install/robotaxi_sim/lib/python3.8/site-packages: /usr/bin/python3 setup.py egg_info --egg-base ../build/robotaxi_sim build --build-base /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/build install --record /root/robotaksi_ws/src/S-M-LASYON/build/robotaxi_sim/install.log --single-version-externally-managed

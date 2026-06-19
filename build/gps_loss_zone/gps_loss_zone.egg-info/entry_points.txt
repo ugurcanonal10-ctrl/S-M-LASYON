@@ -1,0 +1,3 @@
+[console_scripts]
+gps_loss_simulator = gps_loss_zone.gps_loss_simulator:main
+
