@@ -225,6 +225,14 @@
     <model name="pc4"><static>true</static><pose>32 -8 0.02 0 0 0</pose><link name="l"><visual name="v"><geometry><box><size>0.15 6 0.001</size></box></geometry><material><ambient>1 1 1 1</ambient></material></visual></link></model>
 
     <!-- ========================================================
+         NOT: /clock icin gazebo_ros_init plugin'i artik BURADA DEGIL,
+         sim_teknofest.launch.py icindeki "gazebo -s libgazebo_ros_init.so"
+         komut satirinda yukleniyor - bu bir "System" plugin'i, World
+         plugin'i degil (buraya <plugin> olarak eklemek "incorrect
+         plugin type" hatasi veriyordu). Ahmet (Gorev 3 debug sureci).
+         ======================================================== -->
+
+    <!-- ========================================================
          GPS-kaybi / RMSE ölçümleri için ground-truth poz yayını.
          Ahmet (Görev 1) tarafından eklendi - /gazebo/model_states
          topic'ini hem gps_loss_simulator hem de Yasemin'in Görev 2
