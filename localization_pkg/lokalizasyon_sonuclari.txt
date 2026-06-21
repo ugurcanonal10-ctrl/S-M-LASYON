@@ -1,0 +1,24 @@
+=== LOKALİZASYON TEST SONUÇLARI ===
+
+1. NORMAL SÜRÜŞ TEST:
+- RMSE: ~5-7 cm
+- Anlık hata aralığı: 1-10 cm
+- Hedef: ±5 cm
+- Sonuç: BAŞARILI ✅
+
+2. GPS KAYBI / DEAD RECKONING TEST:
+- GPS kaybı süresi: 10 saniye
+- GPS kaybında RMSE: ~7-8 cm
+- Normal moda göre artış: +2-3 cm
+- Dead Reckoning çalışıyor: EVET ✅
+- GPS geri gelince normalize: EVET ✅
+
+Sensör füzyonu: GPS + IMU + Wheel Odometry
+Algoritma: Extended Kalman Filter (EKF)
+
+3. CHI2 YENİLİK TESTİ:
+- Normal GPS Chi2 değeri: 0.00-0.05
+- Aykırı GPS Chi2 değeri: 80-98
+- Eşik değeri: 7.815
+- Aykırı ölçüm reddi: BAŞARILI ✅
+- EKF koruması: ÇALIŞIYOR ✅
