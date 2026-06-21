@@ -238,11 +238,10 @@
     </plugin>
   </gazebo>
 
-  <!-- LiDAR plugin - Velodyne VLP-16 simulasyonu (16 dikey katman, +-15 derece) -->
+  <!-- LiDAR plugin -->
   <gazebo reference="lidar_link">
     <sensor type="ray" name="lidar">
       <pose>0 0 0 0 0 0</pose>
-      <always_on>true</always_on>
       <visualize>true</visualize>
       <update_rate>10</update_rate>
       <ray>
@@ -253,29 +252,15 @@
             <min_angle>-3.14159</min_angle>
             <max_angle>3.14159</max_angle>
           </horizontal>
-          <vertical>
-            <!-- VLP-16: 16 katman, dikey FOV +-15 derece (0.2618 rad) -->
-            <samples>16</samples>
-            <resolution>1</resolution>
-            <min_angle>-0.2618</min_angle>
-            <max_angle>0.2618</max_angle>
-          </vertical>
         </scan>
         <range>
           <min>0.3</min>
-          <max>100.0</max>
-          <resolution>0.01</resolution>
+          <max>30.0</max>
         </range>
       </ray>
       <plugin name="gazebo_ros_lidar" filename="libgazebo_ros_ray_sensor.so">
-        <ros>
-          <!-- NOT: <topic> kisayolu GPS/IMU'da beklenmedik calisti (bkz. Gorev 1
-               debug sureci), bu yuzden burada DOGRUDAN remapping syntax'i
-               kullaniyoruz - kesin /velodyne_points'e cikmasini garantiler. -->
-          <remapping>~/out:=velodyne_points</remapping>
-        </ros>
-        <output_type>sensor_msgs/PointCloud2</output_type>
-        <frame_name>lidar_link</frame_name>
+        <ros><topic>scan</topic></ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
       </plugin>
     </sensor>
   </gazebo>
@@ -315,9 +300,43 @@
     <sensor name="imu_sensor" type="imu">
       <always_on>true</always_on>
       <update_rate>100</update_rate>
+      <visualize>false</visualize>
+      <imu>
+        <angular_velocity>
+          <x><noise type="gaussian"><mean>0</mean><stddev>0.001</stddev></noise></x>
+          <y><noise type="gaussian"><mean>0</mean><stddev>0.001</stddev></noise></y>
+          <z><noise type="gaussian"><mean>0</mean><stddev>0.001</stddev></noise></z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></x>
+          <y><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></y>
+          <z><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></z>
+        </linear_acceleration>
+      </imu>
       <plugin name="gazebo_ros_imu" filename="libgazebo_ros_imu_sensor.so">
         <ros><topic>imu</topic></ros>
         <initial_orientation_as_reference>false</initial_orientation_as_reference>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <!-- GPS plugin -->
+  <gazebo reference="gps_link">
+    <sensor name="gps_sensor" type="gps">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <visualize>false</visualize>
+      <gps>
+        <position_sensing>
+          <horizontal>
+            <noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise>
+          </horizontal>
+          <vertical>
+            <noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise>
+          </vertical>
+        </position_sensing>
+      </gps>
+      <plugin name="gazebo_ros_gps" filename="libgazebo_ros_gps_sensor.so">
+        <ros><topic>gps</topic></ros>
       </plugin>
     </sensor>
   </gazebo>
@@ -325,10 +344,8 @@
   <!-- GPS plugin -->
   <gazebo reference="gps_link">
     <sensor name="gps_sensor" type="gps">
-      <always_on>true</always_on>
       <update_rate>10</update_rate>
-      <plugin name="gazebo_ros_gps" filename="libgazebo_ros_gps_sensor.so">
-        <ros><topic>gps</topic></ros>
+      <plugin name="gazebo_ros_gps" filename="libgazebo_ros_gps_sensor.so">        <ros><topic>gps</topic></ros>
       </plugin>
     </sensor>
   </gazebo>
