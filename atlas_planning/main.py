@@ -3,7 +3,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import cv2
-from .perception import PerceptionPipeline
+from perception import PerceptionPipeline
 
 class RobotaksiPerceptionNode(Node):
     def __init__(self):
